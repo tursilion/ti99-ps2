@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>9cd42ac9-51ce-4732-ae70-22b97bd4eac3</ProjectGuid>
+    <Name>KeyboardGCC</Name>
+    <avrdevice>atmega16</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <AvrProjectType>Importer</AvrProjectType>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>KeyboardGCC</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <avrtool>com.atmel.avrdbg.tool.stk500</avrtool>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.35.1" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E9403</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_stk500>
+      <ToolOptions>
+        <InterfaceProperties>
+          <IspClock>125000</IspClock>
+        </InterfaceProperties>
+        <InterfaceName>ISP</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.stk500</ToolType>
+      <ToolNumber>
+      </ToolNumber>
+      <ToolName>STK500</ToolName>
+    </com_atmel_avrdbg_tool_stk500>
+    <avrtoolinterface>ISP</avrtoolinterface>
+    <avrtoolinterfaceclock>125000</avrtoolinterfaceclock>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'default' ">
+    <OutputPath>bin\default\</OutputPath>
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.Device>-mmcu=atmega16 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega16"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>true</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>F_CPU=20000000UL</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>C:\Program Files\WinAVR\avr\include</Value>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>true</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.warnings.AllWarnings>true</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-gdwarf-2 -funroll-loops</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--section-start=.altkbmap=0x3600 -Wl,--section-start=.bootloader=0x3c00</avrgcc.linker.miscellaneous.LinkerFlags>
+  <avrgcc.assembler.general.AssemblerFlags>-Wall -gdwarf-2 -funroll-loops    -DF_CPU=20000000UL  -O3 -funsigned-char -fshort-enums -Wall -gdwarf-2 -funroll-loops    -DF_CPU=20000000UL  -O3 -funsigned-char -fshort-enums</avrgcc.assembler.general.AssemblerFlags>
+  <avrgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>C:\Program Files\WinAVR\avr\include</Value>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcc.assembler.general.IncludePaths>
+</AvrGcc>
+    </ToolchainSettings>
+    <BuildTarget>all</BuildTarget>
+    <CleanTarget>clean</CleanTarget>
+  </PropertyGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+  <ItemGroup>
+    <Compile Include="Scancodes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ti.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="KeyboardGCC.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="Serial.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="kb.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="gpr.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="ti.c">
+      <SubType>compile</SubType>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'default'">
+      </CustomCompilationSetting>
+    </Compile>
+  </ItemGroup>
+</Project>

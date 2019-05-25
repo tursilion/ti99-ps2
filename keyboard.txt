@@ -1,0 +1,31 @@
+This is the Classic99 keyboard.cpp, which is needed as a reference
+to the screwed up row/column tables I generated.
+
+// Keyboard routines for Classic99 - separate file in hopes of
+// this data being useful on the real thing!
+//
+// The TI Keyboard works by selecting a column, and reading a row
+// For the purpose of this table, the mapping to the keyboard connector
+// doesn't directly match the numbering, which is based on the software.
+// So (99/4A):
+// Col		Pin		Purpose
+// 0		n/c		Joystick 2
+// 1		15		MJU74FRV
+// 2		8		/;P01AQZ
+// 3		13		.L092SWX
+// 4		n/c		Joystick 1
+// 5		14		,KI83DEC
+// 6		9		NHY65GTB
+// 7		12		=<space><cr><nc><fctn><shift><ctrl><nc>
+//
+// Row		Pin		Purpose
+// 0		5		=.,mn/<fire>
+// 1		4		<space>LKJH;<left>
+// 2		1		<enter>OIUYP<right>
+// 3		2		<nc>98760<down>
+// 4		7		<fctn>23451<up><alpha lock>
+// 5		3		<shift>SDFGA
+// 6		10		<ctrl>WERTQ
+// 7		11		<nc>XCVBZ
+
+// Scancode Mapping table
