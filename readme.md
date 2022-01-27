@@ -1,6 +1,5 @@
-Version 1.5
+1.5
 
-//
 // (C) 2009 Mike Brent aka Tursi aka HarmlessLion.com
 // This software is provided AS-IS. No warranty
 // express or implied is provided.
