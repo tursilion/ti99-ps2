@@ -178,6 +178,7 @@ Media Select	CTRL-J\
 Wake			CTRL-E\
 
 ------------------------------------------------------------------------
+
 There are some external control keys you can hook up any way you like 
 (for instance, tie one to the console reset line and you should be 
 able to reset the console!) These lines will go low while you press 
